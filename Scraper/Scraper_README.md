@@ -5,21 +5,21 @@ A high-performance, parallelised data scraper that downloads the entire history 
 ---
 
 ### Features
-- Parallel: Uses Python's multiprocessing to run multiple worker processes, maximising CPU and network usage.
+- **Parallel**: Uses Python's multiprocessing to run multiple worker processes, maximising CPU and network usage.
 <br>
 
-- Asynchronous Workers: Each worker uses asyncio and aiohttp to handle hundreds of concurrent API requests, dramatically increasing download speed.
+- **Asynchronous Workers**: Each worker uses asyncio and aiohttp to handle hundreds of concurrent API requests, dramatically increasing download speed.
 <br>
 
-- Resilient Job Queue: A PostgreSQL-backed job queue ensures that if the script is stopped or crashes, it can resume exactly where it left off with no data loss[^Lying] or duplication.
+- **Resilient Job Queue**: A PostgreSQL-backed job queue ensures that if the script is stopped or crashes, it can resume exactly where it left off with no data loss[^Lying] or duplication.
 
 [^Lying]: There may be ~0.01% data loss as the current jobs will not be saved, however this will be recovered immediately when next downloading, this data will be the front of the job queue.
 
-- Efficient Database Storage: Uses highly optimised, batched database inserts (asyncpg) to handle a high volume of writes without overwhelming the database. 
+- **Efficient Database Storage**: Uses highly optimised, batched database inserts (asyncpg) to handle a high volume of writes without overwhelming the database. 
 <br>
-- Real-time Monitoring: The dispatcher provides a live, updating progress bar showing the percentage of data chunks completed.
+- **Real-time Monitoring**: The dispatcher provides a live, updating progress bar showing the percentage of data chunks completed.
 <br>
-- Dockerised Database: The PostgreSQL database runs in a Docker container for easy setup, portability, and cleanup.
+- **Dockerised Database**: The PostgreSQL database runs in a Docker container for easy setup, portability, and cleanup.
 
 ---
 
