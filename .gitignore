@@ -13,7 +13,10 @@ __pycache__/
 
 /Database/hn.dump
 
-/SCraper/multiprocessing
+/Docs/Plan.md
+/Docs/writeup.md
+
+/Scraper/multiprocessing
 
 
 # C extensions
