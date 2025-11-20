@@ -147,37 +147,6 @@ The `items` table contains:
 - `deleted`: Boolean flag
 - `dead`: Boolean flag
 
-### Common Queries
-
-**Get direct child comments of an item:**
-```sql
-SELECT *
-FROM public.items
-WHERE id IN (
-    SELECT value::bigint
-    FROM public.items,
-         jsonb_array_elements_text(kids)
-    WHERE id = 363  -- Replace with your item ID
-      AND kids IS NOT NULL
-);
-```
-
-**Top stories by score:**
-```sql
-SELECT id, title, score, by
-FROM items
-WHERE type = 'story'
-  AND deleted = false
-ORDER BY score DESC
-LIMIT 100;
-```
-
----
-
-See the [analysis examples](examples/) for code and inspiration.
-
----
-
 ## Contributing
 
 Contributions are welcome! Please:
@@ -186,12 +155,6 @@ Contributions are welcome! Please:
 3. Commit your changes (`git commit -am 'Add new feature'`)
 4. Push to the branch (`git push origin feature/improvement`)
 5. Open a Pull Request
-
----
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
