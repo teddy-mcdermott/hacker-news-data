@@ -11,10 +11,12 @@ __pycache__/
 /Analysis/topics/images/
 /Analysis/topics/models/
 
-/Database/hn.dump
-
 /Docs/Plan.md
 /Docs/writeup.md
+
+/Database/hn.dump
+
+
 
 /Scraper/multiprocessing
 

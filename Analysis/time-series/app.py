@@ -65,9 +65,9 @@ KEYWORD_QUERIES = {
 }
 
 # Create cache and image directories
-cache_dir = Path('cache')
+cache_dir = Path('Analysis/time-series/cache')
 cache_dir.mkdir(exist_ok=True)
-image_dir = Path('static/images')
+image_dir = Path('Analysis/time-series/static/images')
 image_dir.mkdir(parents=True, exist_ok=True)
 
 def get_baseline(time_bin, refresh=False):
